@@ -10,8 +10,8 @@
         <div id="app">
             
             <input type="text" name="name" id="name" v-model='myName'>
-            <h2>{{response.message}}</h2>
             <button @click="signIn()">Sign In</button>
+            <h2>{{response.message}}</h2>
             <div v-if="response.loggedIn">
                 <h3 v-if="response.beenBefore">Welcome Back!</h3>
                 <h3 v-else>N00b!</h3>

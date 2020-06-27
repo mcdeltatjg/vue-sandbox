@@ -1,1 +1,19 @@
-<h2>Hello World!</h2>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+
+        <h1>Hello World!</h1>
+        <div id="app">
+            
+            <input type="text" name="name" id="name" v-model='myName'>
+            <p>{{message}}</p>
+            <button @click="signIn()">Sign In</button>
+            <p id="myContent"></p>
+        </div>
+        
+    </body>
+</html>

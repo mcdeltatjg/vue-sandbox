@@ -10,9 +10,17 @@
         <div id="app">
             
             <input type="text" name="name" id="name" v-model='myName'>
-            <p>{{message}}</p>
+            <h2>{{response.message}}</h2>
             <button @click="signIn()">Sign In</button>
-            <p id="myContent"></p>
+            <div v-if="response.loggedIn">
+                <h3 v-if="response.beenBefore">Welcome Back!</h3>
+                <h3 v-else>N00b!</h3>
+                <h3 v-if="response.allNames.length > 0">Here are the people who signed in so far:</h3>
+                <ul>
+                    <li v-for="name in response.allNames">{{ name }}</li>
+                </ul>
+            </div>
+            
         </div>
         
     </body>

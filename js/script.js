@@ -1,18 +1,23 @@
 new Vue({
     el: "#app",
     data: {
-      message: "You are not logged in yet.",
-      names: [],
+      response: {
+          loggedIn: false,
+          allNames: [],
+          beenBefore: null,
+          message: "You are not logged in yet."
+      },
       myName: ''
+
     },
     methods: {
       signIn: async function() {
         console.log('this.myName = ', this.myName)
-        let serverResponse
-        serverResponse = await fetch(`https://jonas-hello-world.azurewebsites.net/api/wsl-hello-world?name=${this.myName}`, 
-            {mode: 'cors'})
-        let response = await serverResponse.json()
-        this.message = response.message
+        let response = await (await fetch(`https://jonas-hello-world.azurewebsites.net/api/wsl-hello-world/${this.myName}`)).json()
+        console.log(response)
+
+        if(response)
+            this.response = response
       }  
       
     }

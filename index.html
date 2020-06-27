@@ -9,7 +9,8 @@
         <h1>Hello World!</h1>
         <div id="app">
             
-            <input type="text" name="name" id="name" v-model='myName'>
+            Enter your name: <input type="text" name="name" id="name" v-model='myName'>
+            <br />
             <button @click="signIn()">Sign In</button>
             <h2>{{response.message}}</h2>
             <div v-if="response.loggedIn">
